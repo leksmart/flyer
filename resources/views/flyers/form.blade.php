@@ -1,18 +1,20 @@
 @inject('countries', 'App\Http\Utilities\Country')
 
+{{csrf_field()}}
+
 <div class="form-group">
         <label for="street">Street:</label>
-        <input name="street" id="street" class="form-control" type="text" value="{{old('street')}}" />
+        <input name="street" id="street" class="form-control" type="text" value="{{old('street')}}" required />
     </div>
 
     <div class="form-group">
         <label for="city">City:</label>
-        <input name="city" type="text" class="form-control" id="city" value="{{old('city')}}" />
+        <input name="city" type="text" class="form-control" id="city" value="{{old('city')}}" required/>
     </div>
 
     <div class="form-group">
         <label for="zip">Zip/Postal Code</label>
-        <input name="zip" type="text" class="form-control" id="zip" value="{{old('zip')}}" />
+        <input name="zip" type="text" class="form-control" id="zip" value="{{old('zip')}}" required/>
     </div>
 
     <div class="form-group">
@@ -26,27 +28,24 @@
 
     <div class="form-group">
         <label for="state">State:</label>
-        <input name="state" type="text" value="{{old('state')}}" class="form-control" id="state" />
+        <input name="state" type="text" value="{{old('state')}}" class="form-control" id="state" required/>
 
     </div>
     <hr/>
 
     <div class="form-group">
         <label for="price">Sale Price:</label>
-        <input name="price" class="form-control" type="text" id="price" value="{{old('price')}}" />
+        <input name="price" class="form-control" type="text" id="price" value="{{old('price')}}" required/>
     </div>
 
     <div class="form-group">
         <label for="description">Home Description:</label>
-        <textarea name="description" type="text" id="description" class="form-control " rows="10" value="{{old('description')}}">
+        <textarea name="description" type="text" id="description" class="form-control " rows="10" value="{{old('description')}}" required>
             {{old('description')}}
         </textarea>
     </div>
 
-    <div class="form-group">
-        <label for="photos">Photos:</label>
-        <input name="photos" type="file" id="photos" class="form-control" value="{{old('photos')}}" />
-    </div>
+    
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Create Flyer</button>
