@@ -5,6 +5,7 @@
         <meta charset="UTF-8"/>
         <title>Project Flyer</title>
         <link href="/css/app.css" rel="stylesheet"/>
+        <link href="/css/libs.css" rel="stylesheet"/>
     </head>
 
     <body>
@@ -34,6 +35,11 @@
             @yield('content')
 
         </div>
+
+        <script src="/js/libs.js"></script>
+        @include('flash')
+        
+
     </body>
 
 </html>
