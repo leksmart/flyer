@@ -14,7 +14,7 @@ class FlyersController extends Controller
 {
     public function create()
     {
-        flash()->overlay('hello world','this is the message');
+        //flash()->overlay('hello world','this is the message');
         return view('flyers.create');
     }
 
@@ -34,5 +34,13 @@ class FlyersController extends Controller
         //redirect to landing page
         return redirect()->back();
 
+    }
+
+    public function show($zip, $street)
+    {
+
+        $flyer = Flyer::locatedAt($zip, $street)->first();
+
+        return view('flyers.show', compact('flyer'));
     }
 }
